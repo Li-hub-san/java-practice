@@ -22,4 +22,5 @@ public class Exercise_6 {
 
         return (int) Math.round(Math.random() * range + min);
     }
+    
 }
