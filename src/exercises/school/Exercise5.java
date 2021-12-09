@@ -3,7 +3,7 @@ package exercises.school;
 import java.time.LocalDate;
 import java.util.Scanner;
 
-public class Exercise_5 {
+public class Exercise5 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
