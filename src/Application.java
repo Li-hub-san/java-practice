@@ -1,4 +1,4 @@
-import exercises.Homework;
+import exercises_home.Homework;
 
 public class Application {
 
@@ -6,4 +6,5 @@ public class Application {
         Homework homework = new Homework();
         homework.printHello();
     }
+
 }
