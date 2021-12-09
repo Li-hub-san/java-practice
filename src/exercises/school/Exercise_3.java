@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 import java.util.Scanner;
 
@@ -7,7 +7,7 @@ public class Exercise_3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Digite dois números:");
+        System.out.println("Digite dois nï¿½meros:");
         int a = sc.nextInt();
         int b = sc.nextInt();
 
@@ -16,7 +16,7 @@ public class Exercise_3 {
         } else if (a > b) {
             System.out.println("Maior: " + a);
         } else {
-            System.out.println("Os numeros são iguais");
+            System.out.println("Os numeros sï¿½o iguais");
         }
 
         System.out.println("Digite dois nomes:");
@@ -25,13 +25,15 @@ public class Exercise_3 {
 
         int name1Length = nome1.length();
         int name2Length = nome2.length();
-        String output = "O maior nome é ";
+        String output = "O maior nome ï¿½ ";
 
         if (name1Length < name2Length) {
             System.out.println(output + nome2 + " com comprimento de " + name2Length + " letras.");
         } else {
             System.out.println(output + nome1 + " com comprimento de " + name1Length + " letras ");
         }
+        
+        sc.close();
     }
 
 }

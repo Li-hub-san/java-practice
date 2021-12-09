@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 import java.util.Scanner;
 
@@ -12,6 +12,8 @@ public class Exercise_6 {
 
         int random = generateRandomNumber(input);
         System.out.println("Random number between 0 and " + input + ": " + random);
+        
+        sc.close();
     }
 
     public static int generateRandomNumber(int aNumber) {

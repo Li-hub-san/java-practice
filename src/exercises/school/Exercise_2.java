@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 import java.util.Scanner;
 
@@ -13,7 +13,9 @@ public class Exercise_2 {
 
         System.out.println("Como se chama?");
         String nome = s.next();
-        System.out.println("Você chama-se " + nome + "!");
+        System.out.println("Vocï¿½ chama-se " + nome + "!");
+        
+        s.close();
     }
 
 }

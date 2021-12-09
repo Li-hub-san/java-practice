@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 import java.time.LocalDate;
 import java.util.Scanner;

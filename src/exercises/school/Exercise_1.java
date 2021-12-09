@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 public class Exercise_1 {
 

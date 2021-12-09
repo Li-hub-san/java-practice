@@ -1,4 +1,4 @@
-package exercises_home;
+package exercises.home;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class Homework {
      */
     public void printHello() {
         System.out.println("Hello");
-        System.out.println("Lígia Santos");
+        System.out.println("Lï¿½gia Santos");
     }
 
     /**

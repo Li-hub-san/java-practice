@@ -1,4 +1,4 @@
-package exercises;
+package exercises.school;
 
 import java.util.Scanner;
 
@@ -6,7 +6,7 @@ public class Exercise_4 {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        System.out.println("Digite um número:");
+        System.out.println("Digite um nï¿½mero:");
 
         int userNumber = s.nextInt();
 
@@ -14,7 +14,7 @@ public class Exercise_4 {
             System.out.println(i);
         }
 
-        System.out.println("Digite outro número:");
+        System.out.println("Digite outro nï¿½mero:");
         int userNumber2 = s.nextInt();
 
         int sum = 0;
@@ -25,7 +25,9 @@ public class Exercise_4 {
             i++;
         }
 
-        System.out.println("A soma de 0 a " + userNumber2 + " é: " + sum);
+        System.out.println("A soma de 0 a " + userNumber2 + " ï¿½: " + sum);
+        
+        s.close();
     }
 
 }
