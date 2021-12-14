@@ -21,4 +21,5 @@ public class Exercise9 {
 				+ "\n" + "The multiplication even numbers between " + minNumber + " and " + maxNumber + " is: "
 				+ multiplyEven);
 	}
+
 }

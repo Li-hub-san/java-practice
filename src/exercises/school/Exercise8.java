@@ -13,7 +13,11 @@ public class Exercise8 {
 		System.out.print("Input B number: ");
 		int numberB = sc.nextInt();
 
-		System.out.println("Number A = " + numberB + "\n" + "Number B = " + numberA);
+		int swap = numberA;
+		numberA = numberB;
+		numberB = swap;
+
+		System.out.println("Number A = " + numberA + "\n" + "Number B = " + numberB);
 		sc.close();
 	}
 }
