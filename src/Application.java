@@ -4,17 +4,7 @@ public class Application {
 
 	public static void main(String[] args) {
 		Homework homework = new Homework();
-		homework.generateRandom();
+		homework.generateRandomWithRange();
 	}
 
 }
-
-/**
-
-   *
-  ***
- *****
-*******
-   *
-
-*/
