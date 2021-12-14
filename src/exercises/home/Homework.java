@@ -277,15 +277,14 @@ public class Homework {
         }
     }
 
-    public void printAsterisc() {
-
+    public void printAsterisk() {
         for (int i = 0; i < 4; i++) {
-
-            for (int j = 0; j < 4 - i; j++)
+            for (int j = 0; j < 4 - i; j++) {
                 System.out.print(" ");
-
-            for (int k = 0; k < (2 * i + 1); k++)
+            }
+            for (int k = 0; k < (2 * i + 1); k++) {
                 System.out.print("*");
+            }
             System.out.println();
 
         }
@@ -319,6 +318,21 @@ public class Homework {
     public int generateRandomWithRange(int minRange, int maxRange) {
         Random random = new Random();
         return random.nextInt(maxRange - minRange + 1) + minRange;
+    }
+
+    public void printChessBoard() {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                boolean iIsEven = i % 2 == 0;
+                boolean jIsEven = j % 2 == 0;
+                if ((iIsEven && !jIsEven) || (!iIsEven && jIsEven)) {
+                    System.out.print(" * ");
+                } else {
+                    System.out.print("   ");
+                }
+            }
+            System.out.println();
+        }
     }
 
 }
