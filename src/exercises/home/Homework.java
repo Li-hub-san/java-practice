@@ -1,6 +1,7 @@
 package exercises.home;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * <a href="https://www.w3resource.com/java-exercises/basic/index.php"> Java
@@ -334,21 +335,23 @@ public class Homework {
         }
     }
 
-    public void getOlderFriend() {
-        Scanner scanner = new Scanner(System.in);
-        String noMoreFriends = "exit";
-        List<String> namesList = new ArrayList<>();
 
-        System.out.print("Write a name of a friend: ");
-        String friendName = scanner.next();
+    public void createAndPrintEmployees() {
+        SimpleEmployee firstEmployee = new SimpleEmployee("Vitor", 32);
+        SimpleEmployee secondEmployee = new SimpleEmployee("Lígia", 35);
 
-        do {
-            namesList.add(friendName.substring(0, 1).toUpperCase() + friendName.substring(1).toLowerCase());
-            System.out.print("Write a name of a friend or write exit if you don't want to insert more names: ");
-            friendName = scanner.next();
-        } while (!Objects.equals(friendName.toLowerCase(), noMoreFriends));
+        SimpleEmployee[] umaLista = new SimpleEmployee[]{firstEmployee, secondEmployee};
+        System.out.println(Arrays.toString(umaLista));
 
-        System.out.println(namesList);
+        List<SimpleEmployee> employeeNameList = new ArrayList<>();
+        employeeNameList.add(firstEmployee);
+        employeeNameList.add(secondEmployee);
+
+        List<String> newList = employeeNameList.stream()
+                .map(simpleEmployee -> simpleEmployee.getName())
+                .collect(Collectors.toList());
+
+        System.out.println(newList);
     }
 
 }

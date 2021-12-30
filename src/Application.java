@@ -2,9 +2,12 @@ import exercises.home.Homework;
 
 public class Application {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Homework homework = new Homework();
-        homework.getOlderFriend();
+        homework.createAndPrintEmployees();
+
+//        AnaExercises exercises = new AnaExercises();
+//        exercises.someExercise();
     }
 
 }
