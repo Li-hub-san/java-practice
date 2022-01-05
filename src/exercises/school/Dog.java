@@ -6,43 +6,51 @@ public class Dog {
     private String breed;
     private double weight;
 
-    public Dog(String name, int age, String breed, double weight){
+    public Dog(String name, int age, String breed, double weight) {
         this.name = name;
         this.age = age;
         this.breed = breed;
         this.weight = weight;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public int getAge(){
+    public int getAge() {
         return age;
     }
 
-    public String getBreed(){
+    public String getBreed() {
         return breed;
     }
 
-    public double getWeight(){
+    public double getWeight() {
         return weight;
     }
 
-    public void setName(String name){
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void setAge(int age){
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public void setBreed(String breed){
+    public void setBreed(String breed) {
         this.breed = breed;
     }
 
-    public void setWeight(double weight){
+    public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public String bark() {
+        return "Woof Woof Woof I am " + name;
+    }
+
+    public String dogYearsToHumanYears() {
+        return name + ", " + age * 7 + " years old in human years.";
     }
 
     @Override
@@ -51,7 +59,8 @@ public class Dog {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", breed='" + breed + '\'' +
-                ", weight=" + weight +
+                ", weight=" + weight + "kg" +
                 '}';
     }
+
 }

@@ -44,7 +44,7 @@ public class EmployeeApplication {
     public static double getSalarySum(List<Employee> employeeList) {
         return employeeList.stream()
                 .map(Employee::getSalary)
-                .reduce(0d, (a, b) -> a + b);
+                .reduce(0d, Double::sum);
     }
 
     public static double getHighestSalaryUsingReduceMax(List<Employee> employeeList) {
