@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ChristmasJavaExercises {
+public class JavaExercises {
   Scanner scanner = new Scanner(System.in);
 
   /**
