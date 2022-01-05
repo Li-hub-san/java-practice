@@ -5,20 +5,20 @@ import java.util.Scanner;
 
 public class Exercise5 {
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
 
-        System.out.print("Input your year of birth: ");
-        int yearOfBirth = sc.nextInt();
+    System.out.print("Input your year of birth: ");
+    int yearOfBirth = sc.nextInt();
 
-        int age = calculateAgeFromBirthYear(yearOfBirth);
-        System.out.println("You are " + age + " years old");
+    int age = calculateAgeFromBirthYear(yearOfBirth);
+    System.out.println("You are " + age + " years old");
 
-        sc.close();
-    }
+    sc.close();
+  }
 
-    public static int calculateAgeFromBirthYear(int aYearOfBirth) {
-        return LocalDate.now().getYear() - aYearOfBirth;
-    }
+  public static int calculateAgeFromBirthYear(int aYearOfBirth) {
+    return LocalDate.now().getYear() - aYearOfBirth;
+  }
 
 }
