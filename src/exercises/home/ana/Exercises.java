@@ -12,7 +12,7 @@ public class Exercises {
     List<Friend> friends = requestFriends(numberOfFriends);
     Friend oldest = getOldestFriend(friends);
     Friend youngest = getYoungestFriend(friends);
-
+    System.out.println();
     System.out.println("Oldest friend: " + oldest);
     System.out.println("Youngest friend: " + youngest);
   }
@@ -34,7 +34,7 @@ public class Exercises {
   }
 
   private int requestMonthOfBirth(String name) {
-    System.out.print("Input the birth month of " + name + ": ");
+    System.out.print("Input " + name + "'s birth month number: ");
     return sc.nextInt();
   }
 
