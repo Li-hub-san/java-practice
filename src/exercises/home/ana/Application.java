@@ -4,7 +4,7 @@ public class Application {
 
   public static void main(String[] args) {
     Exercises exercises = new Exercises();
-    exercises.someExercise();
+    exercises.askHowManyFriendsAndTheirNames();
   }
 
 }

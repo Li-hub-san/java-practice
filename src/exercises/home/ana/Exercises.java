@@ -1,9 +1,6 @@
 package exercises.home.ana;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class Exercises {
 
@@ -23,5 +20,26 @@ public class Exercises {
 
     System.out.println(namesList);
   }
+
+  public String[] askHowManyFriendsAndTheirNames() {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Input how many close friends you've got: ");
+    int numberOfFriends = sc.nextInt();
+
+    String[] names = new String[numberOfFriends];
+
+    for (int i = 0; i < numberOfFriends; i++) {
+      System.out.println("Input friend " + (i + 1) + " name: ");
+      String name = sc.next();
+      names[i] = name;
+
+      System.out.println("Array" + Arrays.toString(names));
+    }
+
+    return names;
+  }
+
+  public int[] askForFriendsAges() {}
 
 }
