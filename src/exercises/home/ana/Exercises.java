@@ -73,4 +73,40 @@ public class Exercises {
         });
   }
 
+
+  public void exercise3() {
+    int numberOfClassMates = requestNumberOfClassmates();
+    List<Colleague> colleagues = requestAges(numberOfClassMates);
+    double averageAge = calculateAverageAge(colleagues);
+    System.out.println("Class average age: " + averageAge);
+  }
+
+
+  private int requestNumberOfClassmates() {
+    System.out.print("Input how many students there are on your class: ");
+    return sc.nextInt();
+  }
+
+  private List<Colleague> requestAges(int numberOfClassMates) {
+    List<Colleague> colleagues = new ArrayList<>();
+
+    for (int i = 0; i < numberOfClassMates; i++) {
+      System.out.print("Input the age of student " + (i + 1) + ": ");
+      int currentAge = sc.nextInt();
+
+      Colleague colleague = new Colleague(currentAge);
+      colleagues.add(colleague);
+    }
+
+    return colleagues;
+  }
+
+  private double calculateAverageAge(List<Colleague> colleagues) {
+    int totalAgeSum = colleagues.stream()
+        .map(Colleague::getAge)
+        .reduce(0, Integer::sum);
+
+    return (double) totalAgeSum / colleagues.size();
+  }
+
 }
