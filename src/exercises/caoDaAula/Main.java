@@ -39,7 +39,6 @@ public class Main {
         for (Dog currentDog : dogs) {
             System.out.println(currentDog.communicate());
         }
-
     }
 
     public static void printCatsMeowing(List<Cat> cats) {
@@ -52,7 +51,7 @@ public class Main {
         for (Animal currentAnimal : animals) {
             System.out.println(currentAnimal.communicate());
             if (currentAnimal instanceof Cat) {
-                System.out.println("I am " + currentAnimal.getName() + " and regarding hunting: " + ((Cat) currentAnimal).isHunter());
+                System.out.println(" and regarding hunting: " + ((Cat) currentAnimal).isHunter());
             }
         }
     }
