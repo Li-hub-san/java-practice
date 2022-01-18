@@ -1,13 +1,13 @@
 package exercises.school.aula13;
 
-public class Employee implements EmployeeInterface{
-    @Override
-    public void works() {
+public class Employee implements EmployeeInterface {
+  @Override
+  public void work() {
 
-    }
+  }
 
-    @Override
-    public void getsSalary() {
+  @Override
+  public void receiveSalary() {
 
-    }
+  }
 }
