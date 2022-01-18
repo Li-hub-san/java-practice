@@ -4,14 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company implements CompanyInterface {
-  @Override
-  public void payEmployees() {
-    employees.forEach(Employee::receiveSalary);
-  }
-
-  @Override
-  public void chargeCostumers() {
-  }
+  int companyCapital = 1000000000;
 
   List<Employee> employees = new ArrayList<>();
   List<Division> divisions = new ArrayList<>();
@@ -23,5 +16,24 @@ public class Company implements CompanyInterface {
   public void addEmployee(Employee employee) {
     employees.add(employee);
   }
-  
+
+  @Override
+  public void payEmployees() {
+//    employees.forEach(Employee::receiveSalary);
+  }
+
+  @Override
+  public void chargeCostumers() {
+  }
+
+  @Override
+  public int getNumberOfEmployees() {
+    return 0;
+  }
+
+  @Override
+  public int getNumberOfSeatedPlaces() {
+    return 0;
+  }
+
 }
