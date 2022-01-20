@@ -4,54 +4,93 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company implements CompanyInterface {
-  private double companyCapital = 1_000_000d;
+    private double companyCapital;
+    private String name;
+    private String address;
+    private int fiscalNumber;
+    private List<Division> divisions;
 
-  private final List<Employee> employees = new ArrayList<>();
-  private final List<Division> divisions = new ArrayList<>();
 
-  public List<Employee> getEmployees() {
-    return employees;
-  }
+//  public List<Employee> getEmployees() {
+//    return employees;
+//  }
 
-  public List<Division> getDivisions() {
-    return divisions;
-  }
+    private List<Employee> employees;
 
-  public void addDivision(Division division) {
-    divisions.add(division);
-  }
+    public Company(double companyCapital, String name, String address, int fiscalNumber, List<Division> divisions) {
+        this.name = name;
+        this.address = address;
+        this.companyCapital = companyCapital;
+        this.fiscalNumber = fiscalNumber;
+        this.divisions = divisions;
 
-  public void addEmployee(Employee employee) {
-    employees.add(employee);
-  }
-
-  @Override
-  public void payEmployees() {
-    for (Employee employee : employees) {
-      companyCapital -= employee.getSalary();
-      employee.receiveSalary();
+        employees = new ArrayList<Employee>();
     }
-  }
 
-  @Override
-  public void chargeCostumers() {
-  }
+    public int getCompanySeatedSpots() {
+        int totalSeats = 0;
+        for (Division division: divisions) {
+            int eachDivisionSpots = division.getNumberOfSeatedSpots();
+            totalSeats = totalSeats + eachDivisionSpots;
+        }
 
-  @Override
-  public int getNumberOfEmployees() {
-    return employees.size();
-  }
+        return totalSeats;
+    }
 
-  public int getNumberOfDivisions() {
-    return divisions.size();
-  }
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 
-  @Override
-  public int getNumberOfSeatedPlaces() {
-    return 0;
-  }
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
 
-  public double getCompanyCapital() {
-    return companyCapital;
-  }
+
+    @Override
+    public void payEmployees() {
+        double total = 0;
+
+        for (Employee employee : employees) {
+            total += employee.getSalary();
+        }
+
+        if (total <= companyCapital) {
+            for (Employee employee : employees) {
+                employee.receiveSalary();
+                companyCapital -= employee.getSalary();
+            }
+        } else {
+            System.out.println("Not enough capital for paychecks");
+        }
+    }
+
+    @Override
+    public void chargeCostumers() {
+    }
+
+    @Override
+    public int getNumberOfEmployees() {
+        return employees.size();
+    }
+
+    @Override
+    public int getNumberOfSeatedPlaces() {
+        return 0;
+    }
+
+    public double getCompanyCapital() {
+        return companyCapital;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

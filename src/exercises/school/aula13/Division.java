@@ -13,6 +13,9 @@ public class Division {
     this.seatedSpots = seatedSpots;
   }
 
+  public int getNumberOfSeatedSpots(){
+    return this.seatedSpots;
+  }
 
   public DivisionType getDivisionType() {
     return divisionType;

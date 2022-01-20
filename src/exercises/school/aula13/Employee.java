@@ -6,12 +6,14 @@ public class Employee implements EmployeeInterface {
   private int age;
   private double salary;
   private double wallet;
+  private EmployeeType jobPosition;
 
-  public Employee(String name, String surName, int age, double salary) {
+  public Employee(String name, String surName, int age, double salary, EmployeeType position) {
     this.name = name;
     this.surName = surName;
     this.age = age;
     this.salary = salary;
+    this.jobPosition = position;
     this.wallet = 0;
   }
 
@@ -68,7 +70,8 @@ public class Employee implements EmployeeInterface {
     return wallet;
   }
 
-  public void setWallet(double wallet) {
-    this.wallet = wallet;
+  public EmployeeType getJobPosition() {
+    return jobPosition;
   }
+
 }

@@ -1,52 +1,44 @@
 package exercises.school.aula13;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
   public static void main(String[] args) {
-    Company company = new Company();
+    List<Division> divisions = new ArrayList<>();
+    Division division1 = new Division(DivisionType.OFFICE, 20, 2, 5);
+    Division division2 = new Division(DivisionType.KITCHEN, 50, 3, 20);
+    Division division3 = new Division(DivisionType.WC, 5, 0, 0);
+    divisions.add(division1);
+    divisions.add(division2);
+    divisions.add(division3);
 
-    company.addDivision(new Division(DivisionType.OFFICE, 20, 2, 5));
-    company.addDivision(new Division(DivisionType.KITCHEN, 50, 3, 20));
-    company.addDivision(new Division(DivisionType.WC, 5, 0, 0));
+    Company company = new Company(1_000_000d,"Super São Roque","Funchal", 123456789, divisions);
 
-    System.out.println(company.getDivisions());
+    Employee employee1 = new Employee("Jessica", "Barros", 27, 2.500, EmployeeType.CEO);
+    Employee employee2 = new Employee("Lígia", "Santos", 36, 1.500, EmployeeType.ACCOUNTANT);
+    Employee employee3 = new Employee("Leticia", "Barbosa", 27, 2.500, EmployeeType.CFO);
+    Employee employee4 = new Employee("Diogo", "Barros", 27, 980.25, EmployeeType.SALES_PERSON);
+    company.addEmployee(employee1);
+    company.addEmployee(employee2);
+    company.addEmployee(employee3);
+    company.addEmployee(employee4);
 
-    // Posso instanciar o trabalhador para a variavel e adicionar a variavel à lista
-    // através do método addEmployee(first) com a variavel dentro.
-    Employee first = new Employee("Jessica", "Barros", 25, 960.20);
-    company.addEmployee(first);
-
-    // Ou posso chamar a instância da companhia.metodo(e dentro fazer novo
-    // trabalhador e instancia-lo sem o colocar numa variável)
-    company.addEmployee(new Employee("Jessica", "Barros", 25, 960.20));
-    company.addEmployee(new Employee("Lígia", "Santos", 35, 550.10));
-    company.addEmployee(new Employee("Leticia", "Barbosa", 39, 1500));
-    company.addEmployee(new Employee("Diogo", "Barros", 27, 820.50));
-
-    // for aperfeiçoado.
-    for (Employee employee : company.getEmployees()) {
-      System.out.println("Enhanced for -> employee.getName: " + employee.getName());
+    for(Employee employee: company.getEmployees()) {
+      employee.work();
     }
 
-    // forEach
-    System.out.println("***** All employee names *****");
-    company.getEmployees()
-        .forEach(employee -> System.out.println("forEach employee -> employee.getName: " + employee.getName()));
-    System.out.println("***** All company Divisions *****");
-    System.out.println("Number of divisions: " + company.getNumberOfDivisions());
-    company.getDivisions().forEach(division -> System.out
-        .println("forEach division -> division.getDivisionType: " + division.getDivisionType()));
+    company.getEmployees().forEach(employee -> {
+      System.out.println("My name is " + employee.getName() + " and my job position at " + company.getName() + " is " + employee.getJobPosition());
+    });
+    System.out.println("Its pay day!!!");
+    company.payEmployees();
+    company.getEmployees().forEach(employee -> System.out.println(employee.getWallet()));
+    System.out.println("Company capital after payment: "+ company.getCompanyCapital());
 
-//
-//    for (int i = 0; i < company.getNumberOfEmployees(); i++) {
-//      System.out.println("current employee " + company.getEmployees().get(i));
-//    }
-
-//    System.out.println(company.getEmployees().size());
-//    System.out.println(company.getEmployees());
-//    company.payEmployees();
-//    System.out.println(company.getEmployees());
-//    System.out.println("Capital after payment: " + company.getCompanyCapital());
+    System.out.println(division1.getDivisionType() +","+ division1.getNumberOfSeatedSpots());
+    System.out.println(company.getCompanySeatedSpots());
   }
 
 }
