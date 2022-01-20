@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company implements CompanyInterface {
-  int companyCapital = 1000000000;
+  private double companyCapital = 1_000_000d;
 
-  List<Employee> employees = new ArrayList<>();
-  List<Division> divisions = new ArrayList<>();
+  private final List<Employee> employees = new ArrayList<>();
+  private final List<Division> divisions = new ArrayList<>();
+
+  public List<Employee> getEmployees() {
+    return employees;
+  }
+
+  public List<Division> getDivisions() {
+    return divisions;
+  }
 
   public void addDivision(Division division) {
     divisions.add(division);
@@ -19,7 +27,10 @@ public class Company implements CompanyInterface {
 
   @Override
   public void payEmployees() {
-//    employees.forEach(Employee::receiveSalary);
+    for (Employee employee : employees) {
+      companyCapital -= employee.getSalary();
+      employee.receiveSalary();
+    }
   }
 
   @Override
@@ -28,7 +39,11 @@ public class Company implements CompanyInterface {
 
   @Override
   public int getNumberOfEmployees() {
-    return 0;
+    return employees.size();
+  }
+
+  public int getNumberOfDivisions() {
+    return divisions.size();
   }
 
   @Override
@@ -36,4 +51,7 @@ public class Company implements CompanyInterface {
     return 0;
   }
 
+  public double getCompanyCapital() {
+    return companyCapital;
+  }
 }

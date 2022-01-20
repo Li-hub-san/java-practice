@@ -45,4 +45,14 @@ public class Division {
   public void setSeatedSpots(int seatedSpots) {
     this.seatedSpots = seatedSpots;
   }
+
+  @Override
+  public String toString() {
+    return
+        "{Division type: " + divisionType +
+            ", area= " + area + "m2" +
+            ", numberOfWindows=" + numberOfWindows +
+            ", seatedSpots=" + seatedSpots +
+            '}';
+  }
 }

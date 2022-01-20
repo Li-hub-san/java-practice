@@ -18,11 +18,12 @@ public class Employee implements EmployeeInterface {
   @Override
   public String toString() {
     return "Employee{" +
-            "name='" + name + '\'' +
-            ", surName='" + surName + '\'' +
-            ", age=" + age +
-            ", salary=" + salary +
-            '}';
+        "name='" + name + '\'' +
+        ", surName='" + surName + '\'' +
+        ", age=" + age +
+        ", salary=" + salary +
+        ", wallet=" + wallet +
+        '}';
   }
 
   @Override
@@ -31,8 +32,8 @@ public class Employee implements EmployeeInterface {
   }
 
   @Override
-  public void receiveSalary(double salary) {
-    wallet = wallet + this.salary;
+  public void receiveSalary() {
+    wallet += this.salary;
   }
 
   public String getName() {
