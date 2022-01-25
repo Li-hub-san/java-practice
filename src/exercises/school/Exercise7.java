@@ -16,6 +16,7 @@ public class Exercise7 {
     String replaceOccurrence = replaceOccurrence(name);
     System.out.println("Replace letter i with number 1: " + replaceOccurrence);
 
+    // what if the name is smaller than 3??? Create exception
     String printFirstThreeLetters = printFirstThreeLetters(name);
     System.out.println("First three letters: " + printFirstThreeLetters);
 
