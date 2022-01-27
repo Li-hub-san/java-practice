@@ -58,12 +58,12 @@ public class Main {
 //    System.out.println(company.getNumberOfEmployees());
 //    System.out.println(company.getEmployees());
 
-    // LEND EMPLOYEES
-//    System.out.println(company.getEmployees());
-//    System.out.println(company1.getEmployees());
-//    company.lendEmployee(company1, employee3);
-//    System.out.println(company.getEmployees());
-//    System.out.println(company1.getEmployees());
+    // **** LEND EMPLOYEES ****
+    System.out.println(company.getEmployees());
+    System.out.println(company1.getEmployees());
+    company.lendEmployee(company1, employee3);
+    System.out.println(company.getEmployees());
+    System.out.println(company1.getEmployees());
     company.payEmployees(manager1);
 
     // O chefe tem o boolean a falso. Faço set para tru para pagar os trabalhadores.
