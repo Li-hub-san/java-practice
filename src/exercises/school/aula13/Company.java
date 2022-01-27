@@ -4,93 +4,112 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Company implements CompanyInterface {
-    private double companyCapital;
-    private String name;
-    private String address;
-    private int fiscalNumber;
-    private List<Division> divisions;
+  private double companyCapital;
+  private String name;
+  private String address;
+  private int fiscalNumber;
+  private List<Division> divisions;
+
+  private List<Employee> employees;
+
+  public Company(double companyCapital, String name, String address, int fiscalNumber, List<Division> divisions) {
+    this.name = name;
+    this.address = address;
+    this.companyCapital = companyCapital;
+    this.fiscalNumber = fiscalNumber;
+    this.divisions = divisions;
+
+    employees = new ArrayList<>();
+  }
+
+  //recebe nos parametros a empresa na qual quero enviar os trabalhadores e o trabalhador que quero enviar.
+  //verifico se o trabalhador percente à lista da qual estou a remover e depois adiciono à companhia e removo-o da lista.
+  public void lendEmployee(Company company, Employee employee) {
+    for (int i = 0; i < employees.size(); i++) {
+      if (employees.get(i) == employee) {
+        company.addEmployees(employee);
+        employees.remove(employee);
+      }
+    }
+  }
+
+  public void fireEmployees() {
+    employees.clear();
+  }
 
 
-//  public List<Employee> getEmployees() {
-//    return employees;
-//  }
-
-    private List<Employee> employees;
-
-    public Company(double companyCapital, String name, String address, int fiscalNumber, List<Division> divisions) {
-        this.name = name;
-        this.address = address;
-        this.companyCapital = companyCapital;
-        this.fiscalNumber = fiscalNumber;
-        this.divisions = divisions;
-
-        employees = new ArrayList<Employee>();
+  public int getCompanySeatedSpots() {
+    int totalSeats = 0;
+    for (Division division : divisions) {
+      int eachDivisionSpots = division.getNumberOfSeatedSpots();
+      totalSeats = totalSeats + eachDivisionSpots;
     }
 
-    public int getCompanySeatedSpots() {
-        int totalSeats = 0;
-        for (Division division: divisions) {
-            int eachDivisionSpots = division.getNumberOfSeatedSpots();
-            totalSeats = totalSeats + eachDivisionSpots;
-        }
+    return totalSeats;
+  }
 
-        return totalSeats;
+  public void setEmployees(List<Employee> employees) {
+    this.employees = employees;
+  }
+
+  public void addEmployees(Employee employee) {
+    employees.add(employee);
+  }
+
+  // Faço primeiro as verificações e return para saír da função.
+  @Override
+  public void payEmployees(Manager manager) {
+    if (!manager.allowsPayment()) {
+      System.out.println("Paycheck not approved by the manager.");
+      return;
     }
 
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
+    double totalSalaries = 0;
+    for (Employee employee : employees) {
+      totalSalaries += employee.getSalary();
     }
 
-    public void addEmployee(Employee employee) {
-        employees.add(employee);
+    if (totalSalaries > companyCapital) {
+      System.out.println("Not enough capital for paychecks");
+      return;
     }
 
-
-    @Override
-    public void payEmployees() {
-        double total = 0;
-
-        for (Employee employee : employees) {
-            total += employee.getSalary();
-        }
-
-        if (total <= companyCapital) {
-            for (Employee employee : employees) {
-                employee.receiveSalary();
-                companyCapital -= employee.getSalary();
-            }
-        } else {
-            System.out.println("Not enough capital for paychecks");
-        }
+    for (Employee employee : employees) {
+      employee.receiveSalary();
+      companyCapital -= employee.getSalary();
     }
 
-    @Override
-    public void chargeCostumers() {
-    }
+    System.out.println("Payments have been made.");
+  }
 
-    @Override
-    public int getNumberOfEmployees() {
-        return employees.size();
-    }
 
-    @Override
-    public int getNumberOfSeatedPlaces() {
-        return 0;
-    }
+  @Override
+  public void chargeCostumers() {
+  }
 
-    public double getCompanyCapital() {
-        return companyCapital;
-    }
+  @Override
+  public int getNumberOfEmployees() {
+    return employees.size();
+  }
 
-    public String getAddress() {
-        return address;
-    }
+  @Override
+  public int getNumberOfSeatedPlaces() {
+    return 0;
+  }
 
-    public List<Employee> getEmployees() {
-        return employees;
-    }
+  public double getCompanyCapital() {
+    return companyCapital;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getAddress() {
+    return address;
+  }
+
+  public List<Employee> getEmployees() {
+    return employees;
+  }
+
+  public String getName() {
+    return name;
+  }
 }
