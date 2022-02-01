@@ -2,26 +2,20 @@ package exercises.school.teste2;
 
 public class Reboque {
     private int numeroTransporte;
-    private int numeroServiços;
-    private boolean avariado;
+    private int numeroServicos;
+    private boolean isAvariado;
 
     public Reboque(int numeroTransporte) {
         this.numeroTransporte = numeroTransporte;
-        numeroServiços = 0;
-    }
-
-    public Reboque(int numeroTransporte, int numeroServiços) {
-        this.numeroTransporte = numeroTransporte;
-        numeroServiços = 0;
+        numeroServicos = 0;
     }
 
     public String trabalhar() {
-        numeroServiços ++;
-        return "Eu ";
+        return "Eu, ";
     }
 
     public String avariar() {
-        avariado = true;
+        isAvariado = true;
         return "Estou avariado. ";
     }
 
@@ -34,12 +28,19 @@ public class Reboque {
         this.numeroTransporte = numeroTransporte;
     }
 
-    public int getNumeroServiços() {
-        return numeroServiços;
+    public int getNumeroServicos() {
+        return numeroServicos;
     }
 
-    public void setNumeroServiços(int numeroServiços) {
-        this.numeroServiços = numeroServiços;
+    public void setNumeroServicos(int numeroServicos) {
+        this.numeroServicos = numeroServicos;
     }
 
+    public boolean isAvariado() {
+        return isAvariado;
+    }
+
+    public void setAvariado(boolean avariado) {
+        isAvariado = avariado;
+    }
 }

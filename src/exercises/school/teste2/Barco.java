@@ -1,17 +1,17 @@
 package exercises.school.teste2;
 
-public class Barco extends Reboque{
+public class Barco extends Reboque {
     private double comprimento;
     private double largura;
 
-    public Barco(int numeroTransporte, double comprimento ) {
+    public Barco(int numeroTransporte, double comprimento) {
         super(numeroTransporte);
         this.comprimento = comprimento;
     }
 
     @Override
     public String trabalhar() {
-        return super.trabalhar() +"carro nº" + getNumeroTransporte() + " estou a trabalhar.";
+        return super.trabalhar() + "barco nº" + getNumeroTransporte() + " estou a trabalhar.";
     }
 
     @Override

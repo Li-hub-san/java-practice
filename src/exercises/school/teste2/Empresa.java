@@ -21,17 +21,26 @@ public class Empresa implements EmpresaInterface {
         return reboques.size();
     }
 
+    public List<Reboque> getReboquesAvariados() {
+        List<Reboque> reboquesAvariados = new ArrayList<>();
+
+        for (Reboque reboqueAtual : reboques) {
+            if (reboqueAtual.isAvariado()) {
+                reboquesAvariados.add(reboqueAtual);
+            }
+        }
+
+        return reboquesAvariados;
+    }
+
     @Override
     public int getNumeroReboquesAvariados() {
-        return reboques.size();
+        return getReboquesAvariados().size();
     }
 
     @Override
     public String toString() {
-        return "Empresa{" +
-                "nome='" + nome + '\'' +
-                ", reboques=" + reboques +
-                '}';
+        return "Empresa{" + "nome='" + nome + '\'' + ", reboques=" + reboques + '}';
     }
 
     public String getNome() {
