@@ -38,6 +38,7 @@ public class Empresa implements EmpresaInterface {
         return getReboquesAvariados().size();
     }
 
+
     @Override
     public String toString() {
         return "Empresa{" + "nome='" + nome + '\'' + ", reboques=" + reboques + '}';
