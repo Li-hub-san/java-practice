@@ -11,7 +11,7 @@ public class Barco extends Reboque{
 
     @Override
     public String trabalhar() {
-        return super.trabalhar() +"carro nº" + getNumeroTransporte() + " estou a trabalhar.";
+        return super.trabalhar() +"barco nº" + getNumeroTransporte() + " estou a trabalhar.";
     }
 
     @Override

@@ -28,6 +28,7 @@ public class Main {
         for (Reboque reboque : reboques) {
             System.out.println(reboque.trabalhar());
         }
+
         System.out.println("\n-------- Avariar um reboque --------");
         System.out.println(barco1.avariar());
 

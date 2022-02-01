@@ -26,6 +26,7 @@ public class Empresa implements EmpresaInterface {
         return reboques.size();
     }
 
+
     @Override
     public String toString() {
         return "Empresa{" +
