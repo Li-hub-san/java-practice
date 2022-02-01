@@ -36,5 +36,6 @@ public class Main {
         System.out.println("\n-------- Voltar a mandar a trabalhar o reboque avariado --------");
         System.out.println(barco1.trabalhar());
 
+
     }
 }
