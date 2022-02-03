@@ -4,19 +4,9 @@ public class Carro extends Reboque {
     private int lugaresSentados;
     private double pesoMaxRebocavel;
 
-    public Carro(int numeroTransporte, int pesoMaxRebocavel) {
-        super(numeroTransporte);
+    public Carro(int numeroTransporte, String tipo, int pesoMaxRebocavel) {
+        super(numeroTransporte, tipo);
         this.pesoMaxRebocavel = pesoMaxRebocavel;
-    }
-
-    @Override
-    public String trabalhar() {
-        return super.trabalhar() + "carro nº" + getNumeroTransporte() + " estou a trabalhar.";
-    }
-
-    @Override
-    public String avariar() {
-        return super.avariar() + "Carro nº" + getNumeroTransporte() + " está fora de serviço.";
     }
 
     @Override

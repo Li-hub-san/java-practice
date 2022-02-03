@@ -1,4 +1,4 @@
-package exercises.caoDaAula;
+package exercises.cao_da_aula;
 
 import java.util.ArrayList;
 import java.util.List;

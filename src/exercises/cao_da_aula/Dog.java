@@ -1,4 +1,4 @@
-package exercises.caoDaAula;
+package exercises.cao_da_aula;
 
 public class Dog extends Animal {
     private String breed;

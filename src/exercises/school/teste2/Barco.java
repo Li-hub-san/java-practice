@@ -1,23 +1,15 @@
 package exercises.school.teste2;
 
 public class Barco extends Reboque {
+    ;
     private double comprimento;
     private double largura;
 
-    public Barco(int numeroTransporte, double comprimento) {
-        super(numeroTransporte);
+    public Barco(int numeroTransporte, String tipo, double comprimento) {
+        super(numeroTransporte, tipo);
         this.comprimento = comprimento;
     }
 
-    @Override
-    public String trabalhar() {
-        return super.trabalhar() + "barco nº" + getNumeroTransporte() + " estou a trabalhar.";
-    }
-
-    @Override
-    public String avariar() {
-        return super.avariar() + "Barco nº" + getNumeroTransporte() + " está fora de serviço.";
-    }
 
     @Override
     public String toString() {

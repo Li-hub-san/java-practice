@@ -1,41 +1,33 @@
 package exercises.school;
 
-import exercises.school.aula13.missingNumberException;
-
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Exercises {
+public class ExceptionExercises {
 
     public static void main(String[] args) {
-//        division(10, 5);
 //        division(10, 0);
-
-//        nullString("Ligia");
-//        nullString(null);
+//        division(10, null);
 //
-        tryWhile();
-//        Scanner scanner = new Scanner(System.in);
-//        int number = scanner.nextInt();
-
-//        if (number < 10) {
-//            throw new missingNumberException();
-//        }
+        nullString(null);
+        nullString("Ligia");
+//
+//        tryWhile();
     }
 
 
-    private static void division(int numberOne, int numberTwo) {
-
+    private static void division(int numberOne, Integer numberTwo) {
         try {
             System.out.println(numberOne / numberTwo);
         } catch (ArithmeticException exception) {
             System.out.println("You cannot divide by 0, " + exception.getMessage());
         } catch (Exception exception) {
-            System.out.println("Segunda exceção" + exception.getMessage());
+            System.out.println("Segunda exceção: " + exception.getMessage());
+            System.out.println(Arrays.toString(exception.getStackTrace()));
         }
     }
 
     private static void nullString(String name) {
-
         try {
             System.out.println(name.substring(0, 6));
         } catch (NullPointerException exception) {
@@ -47,20 +39,22 @@ public class Exercises {
 
     private static void tryWhile() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Input a number: ");
+        boolean isCorrect = false;
 
-        boolean correct = false;
-
-        while (!correct) {
+        while (!isCorrect) {
             try {
-
-                correct = true;
-            } catch (StringIndexOutOfBoundsException exception) {
-                scanner.nextInt();
                 System.out.println("Input a number: ");
+                int number = scanner.nextInt();
+
+                if (number <= 10) {
+                    throw new MissingNumberException();
+                }
+
+                isCorrect = true;
+            } catch (MissingNumberException exception) {
+                System.out.println(exception.getMessage());
             }
         }
     }
-
 
 }
