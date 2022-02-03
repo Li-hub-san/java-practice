@@ -1,4 +1,4 @@
-package exercises.school;
+package exercises.school.exceptions;
 
 import java.util.Arrays;
 import java.util.Scanner;

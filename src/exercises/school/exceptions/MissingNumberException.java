@@ -1,4 +1,4 @@
-package exercises.school;
+package exercises.school.exceptions;
 
 public class MissingNumberException extends Exception {
 
