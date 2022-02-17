@@ -14,8 +14,8 @@ public class ExceptionExercise2 {
             validar(null);
             validar("Leticia");
 
-        } catch (SemLetraException exception){
-            System.out.println("1st Catch: ocorreu um erro: " + exception.getMessage());
+        } catch (SemLetraException e){
+            System.out.println("1st Catch: ocorreu um erro: " + e.getMessage());
         } catch (NullPointerException exception){
             System.out.println("2nd Catch exception: " + exception.getMessage());
         } finally {

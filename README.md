@@ -44,3 +44,95 @@ Numero de serviço comeca a zero.
 ><br> 3xx -> 
 ><br> 4xx -> 
 ><br> 5xx -> 
+
+### API
+- Facilitar a troca de informação entre sistemas com diferentes linguagens de programação.
+- Conector/interface que faz a interligação entre diferentes aplicações/sistemas
+
+### CRUD
+- Create Retrieve Update Delete
+- POST, GET, PUT, DELETE
+
+### API SOAP
+- Mais complexo mas mais seguro.
+- Só permite a utilização de XML.
+- Regras restritas.
+
+### Query params:
+#### url structure:
+http://www.site.com/page.html?parameter1=[@field:fieldname1]&parameter2=[@field:fieldname2]
+ 
+- url: até ao ? -> http://www.site.com/page.html (endpoint)
+- query String Begin: ?
+- query param structure: (conjuto de pares Key-value) nome_param=valor_param
+- query string separator: &
+
+### Headers and Body
+- Um GET não tem body.
+- Todos os pedidos podem ter headers.
+- O body do POST ou do PUT pode ir em Json ou form-data.
+- Headers -> Permitem que o cliente e o servidor passem informações adicionais; 
+  - É onde são definidas propriedades de:
+    - Autorização/Segurança, Proxy, Cache, Cookies, Linguagem, Informações sobre o body da mensagem, Etc.
+
+### Erros respostas
+
+- 1xx – Informativos
+- 2xx – Indicativos de sucesso
+- 3xx – Redirecionamentos
+- 4xx – Erros de cliente
+- 5xx – Erros no lado do servidor
+
+#### Erros mais comuns:
+- Erro 403 — Proibido
+- Erro 404 — Não encontrado
+- Erro 500 — Erro interno do servidor
+- Erro 503 — Serviço Indisponível
+- Erro 504 — Gateway Timeout
+
+### Exceções:
+- Consiste na ocorrência de imprevistos (exceções) durante a execução do programa.
+- Podem ser erros de lógica, acesso a dados/variáveis ou fatores externos que impossibilitam o correto funcionamento da aplicação.
+
+
+- Possíveis exceções:
+  - Aceder um objeto que não existe;
+  - Tentar comunicar sem haver ligação;
+  - Acesso a um objeto ainda não inicializado;
+  - Divisão de um número por 0;
+
+- Exemplo try catch with finally:
+
+        try {
+            validar(nome);
+            validar("Juan");
+            validar("Ju");
+            validar(null);
+            validar("Leticia");
+
+        } catch (SemLetraException exception){
+            System.out.println("1st Catch: ocorreu um erro: " + exception.getMessage());
+        } catch (NullPointerException exception){
+            System.out.println("2nd Catch exception: " + exception.getMessage());
+        } finally {
+            System.out.println("""
+                    O finally corre sempre!
+                    Funciona do género de 'sc.close'.
+                    Fica sempre depois do último 'catch'.
+                    """);
+        }
+ 
+### Streams
+
+#### map -> transformar cada elemento.
+#### filter -> seleciona quais os elementos que ficam na lista (true fica, falso exclui).
+
+    List<String> myList = Arrays.asList("a1","a2", "b1", "c2", "c1");
+
+    List<Integer> newList = myList.stream()
+            .map(s -> s.toUpperCase())
+            .filter(s -> s.toUpperCase().startsWith("C"))
+            .map(s -> s.replace("C",""))
+            .map(s -> Integer.parseInt(s))
+            .toList();
+    System.out.println(newList);
